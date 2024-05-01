@@ -13,6 +13,9 @@ create table table_name(column1 datatype constraint, column2 datatype constraint
 # CHECK - Ensures that the values in a column satisfies a specific condition
 # DEFAULT - Sets a default value for a column if no value is specified
 # CREATE INDEX - Used to create and retrieve data from the database very quickly
+insert into table_name (column1, column2, column3) values (value1, value2, value3);
+update table_name set column1 = value1, column2 = value2 where condition;
+delete from table_name where condition;
 select distinct column1, column2 from table_name;                                                                //shows only distinct values
 desc table_name;                                                                                                 //to get table schema
 alter table table_name add primary key(column name);                                                             //add pri. key after table creation

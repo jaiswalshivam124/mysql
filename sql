@@ -7,4 +7,4 @@ backup database testDB to disk = 'D:\backups\testDB.bak';                       
 create table table_name(column1 datatype, column2 datatype, column3 datatype primary key(columnname));
 desc table_name;                                                                                                 //to get table schema
 alter table table_name add primary key(column name);
-alter table table_name delete primary key;
+alter table table_name drop primary key;

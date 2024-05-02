@@ -21,3 +21,23 @@ desc table_name;                                                                
 alter table table_name add primary key(column name);                                                             //add pri. key after table creation
 alter table table_name drop primary key;                                                                         //removing pri. key
 drop table table_name;                                                                                           //deleting table
+
+Aggregate Functions
+# MIN() - returns the smallest value within the selected column
+# MAX() - returns the largest value within the selected column
+# COUNT() - returns the number of rows in a set
+# SUM() - returns the total sum of a numerical column
+# AVG() - returns the average value of a numerical column
+select max(field_name) from table_name;
+
+## Wildcards with LIKE (% for any _ for specific)
+
+##JOINS
+select Orders.OrderID, Customers.CustomerName, Orders.OrderDate from Orders inner join customers on Orders.CustomerID=Customers.CustomerID;
+# (INNER) JOIN: Returns records that have matching values in both tables
+# LEFT (OUTER) JOIN: Returns all records from the left table, and the matched records from the right table
+# RIGHT (OUTER) JOIN: Returns all records from the right table, and the matched records from the left table
+# FULL (OUTER) JOIN: Returns all records when there is a match in either left or right table
+# In mysql full join cannot be used, use left join union right join
+
+

@@ -53,4 +53,14 @@ show procedure status where db = 'db1';
 @Call
 call p1;
 
+create procedure p3(out highestmark int) select max(hno) into highestmark from human;
+call p1(@m);
+select @m;
+
+create procedure p5(inout var1 varchar(25)) select hno into var1 from human where hname = var1;
+call p1(@m);
+select @m;
+
+
+
 

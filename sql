@@ -40,6 +40,17 @@ select Orders.OrderID, Customers.CustomerName, Orders.OrderDate from Orders inne
 # FULL (OUTER) JOIN: Returns all records from left and right table also the matched row from both
 # In mysql full join cannot be used, use left join union right join
 
-
+£Chaning delimiter -> delimiter &, delimiter ;
+  
+Stored procedure
+@Create Procedure
+create procedure p1 () select * from human;
+@in, out, inout parameters in procedure
+create procedure p1 (in var1 int) select * from human limit var1;
+drop procedure p1;
+@View 
+show procedure status where db = 'db1';
+@Call
+call p1;
 
 

@@ -19,8 +19,16 @@ delete from table_name where condition;
 select distinct column1, column2 from table_name;                                                                //shows only distinct values
 desc table_name;                                                                                                 //to get table schema
 alter table table_name add primary key(column name);                                                             //add pri. key after table creation
+create table persons (ID int not null, LastName varchar(255), constraint PK_Person primary key(ID,LastName));   //PK_Person is primary key with two fields
 alter table table_name drop primary key;                                                                         //removing pri. key
 drop table table_name;                                                                                           //deleting table
+create table orders(orderid int, ordernumber int, personid int, primary key (orderid), foreign key (personid) references persons(personid));
+create table eight(name varchar(255), age int, check (age>=18));                                                 //enters only if condition is satisfied
+create table eight1(name varchar(255), age int default 45, check (age>=18));                                     //set default if not given
+create index index1 on eight1 (name);                                                                            //speed up queries
+create unique index index2 on eight1 (age);                                                                      //Cannot have duplicate values
+# Date, Timestamp, Year - YYYY-MM-DD, YYYY-MM-DD HH:MI:SS, YYYY
+create view BrazilCustomers as select CustomerName, ContactName from Customers where Country = 'Brazil';         // create a view     
 
 Aggregate Functions
 # MIN() - returns the smallest value within the selected column
@@ -51,15 +59,20 @@ drop procedure p1;
 @View 
 show procedure status where db = 'db1';
 @Call
-call p1;
+call p1(4);
 
 create procedure p3(out highestmark int) select max(hno) into highestmark from human;
-call p1(@m);
+call p3(@m);
 select @m;
 
 create procedure p5(inout var1 varchar(25)) select hno into var1 from human where hname = var1;
-call p1(@m);
+SET @M = '3';  
+call p5(@m);
 select @m;
+
+
+
+
 
 
 
